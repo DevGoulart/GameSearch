@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catálogo de Jogos</title>
+</head>
+<body>
+    <h1>Catálogo de Jogos</h1>
+    <ul>
+        {% for jogo in jogos %}
+            <li>
+                <h2><a href="{% url 'detalhe_jogo' jogo.id %}">{{ jogo.titulo }}</a></h2>
+                {% if jogo.imagem %}
+                    <img src="{{ jogo.imagem.url }}" alt="{{ jogo.titulo }}" width="200">
+                {% else %}
+                    <p>Sem imagem disponível</p>
+                {% endif %}
+            </li>
+        {% empty %}
+            <p>Nenhum jogo no catálogo ainda.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

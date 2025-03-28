@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ jogo.titulo }}</title>
+</head>
+<body>
+    <h1>{{ jogo.titulo }}</h1>
+    {% if jogo.imagem %}
+        <img src="{{ jogo.imagem.url }}" alt="{{ jogo.titulo }}" width="300">
+    {% else %}
+        <p>Sem imagem disponível</p>
+    {% endif %}
+    <h2>Descrição</h2>
+    <p>{{ jogo.descricao }}</p>
+    <p><a href="/">Voltar ao catálogo</a></p>
+</body>
+</html>
