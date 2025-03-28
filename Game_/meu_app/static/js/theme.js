@@ -15,3 +15,11 @@ if (localStorage.getItem('darkMode') === 'true') {
     body.classList.remove('dark-mode');
     checkbox.checked = false;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.nike-hamburger');
+    const navMenu = document.querySelector('.nike-nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+});

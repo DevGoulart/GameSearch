@@ -19,6 +19,109 @@
     --muted-text: #7f8c8d;
 }
 
+/* Estilos da barra de navegação */
+.navbar {
+    background: transparent; /* Remove o fundo da navbar */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os links */
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.9) 100%); /* Gradiente apenas nos botões */
+    padding: 10px 20px; /* Espaçamento interno para o contorno */
+    border-radius: 30px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px var(--shadow-color); /* Contorno apenas nos botões */
+    transition: box-shadow 0.3s ease;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efeito de hover */
+.nav-links a:hover {
+    color: var(--link-hover);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Linha animada abaixo do link */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: var(--button-bg);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+/* Efeito ativo (opcional) */
+.nav-links a.active {
+    background: var(--button-bg);
+    color: white;
+}
+
+/* Ajustes para modo escuro */
+body.dark-mode .navbar {
+    background: transparent; /* Mantém sem fundo no modo escuro */
+}
+
+body.dark-mode .nav-links {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(40, 40, 40, 0.9) 100%); /* Gradiente ajustado para modo escuro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .nav-links a:hover {
+    background: rgba(255, 255, 255, 0);
+}
+
+body.dark-mode .nav-links a::after {
+    background: var(--button-hover);
+}
+
+body.dark-mode .nav-links a.active {
+    background: var(--button-hover);
+    color: #0d0d0d;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -80,13 +183,16 @@ h1 .logo {
 .switch {
     font-size: 17px;
     position: absolute;
-    top: 20px;
+    top: 10px; /* Ajustado para ficar mais próximo do topo */
     right: 20px;
     display: inline-block;
     width: 4em;
     height: 2.2em;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1100; /* Z-index maior que o da navbar */
+    background: var(--card-bg); /* Adiciona um fundo para melhor visibilidade */
+    transition: background 0.3s ease;
 }
 
 .switch input {
@@ -321,7 +427,35 @@ body.dark-mode .icon svg path {
     }
 
     .switch {
-        top: 10px;
+        top: 5px;
         right: 10px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        gap: 20px;
+        padding: 8px 15px;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+        box-shadow: none;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
     }
 }
