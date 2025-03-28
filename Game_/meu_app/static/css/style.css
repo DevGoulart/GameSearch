@@ -22,10 +22,11 @@
 /* Estilos da barra de navegação */
 .navbar {
     background: transparent;
-    padding: 15px 0;
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background 0.3s ease;
 }
 
 .nav-container {
@@ -41,9 +42,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.9) 100%);
-    padding: 10px 20px;
+    gap: 20px; /* Alinhado com o CSS de referência (20px em telas menores) */
+    padding: 8px 15px; /* Alinhado com o CSS de referência (8px 15px em telas menores) */
     border-radius: 30px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: box-shadow 0.3s ease;
@@ -56,11 +56,11 @@
 .nav-links a {
     text-decoration: none;
     color: var(--link-color);
-    font-size: 1.2em;
+    font-size: 1em; /* Alinhado com o CSS de referência (1em em telas menores) */
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    padding: 8px 16px;
+    padding: 6px 12px; /* Alinhado com o CSS de referência (6px 12px em telas menores) */
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
@@ -93,6 +93,7 @@
     width: 80%;
 }
 
+/* Efeito ativo (opcional) */
 .nav-links a.active {
     background: var(--button-bg);
     color: white;
@@ -104,7 +105,7 @@ body.dark-mode .navbar {
 }
 
 body.dark-mode .nav-links {
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(40, 40, 40, 0.9) 100%); /* Gradiente ajustado para modo escuro */
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(40, 40, 40, 0.9) 100%);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -431,25 +432,25 @@ body.dark-mode .icon svg path {
     }
 
     .navbar {
-        padding: 10px 0;
+        padding: 8px 0; /* Reduzido ainda mais para telas menores */
     }
 
     .nav-links {
-        gap: 20px;
-        padding: 8px 15px;
+        gap: 15px; /* Reduzido para telas menores */
+        padding: 6px 10px; /* Reduzido para telas menores */
     }
 
     .nav-links a {
-        font-size: 1em;
-        padding: 6px 12px;
+        font-size: 0.9em; /* Reduzido para telas menores */
+        padding: 5px 10px; /* Reduzido para telas menores */
     }
 }
 
 @media (max-width: 480px) {
     .nav-links {
         flex-direction: column;
-        gap: 15px;
-        padding: 10px 0;
+        gap: 10px; /* Reduzido para telas muito pequenas */
+        padding: 8px 0;
         box-shadow: none;
     }
 
