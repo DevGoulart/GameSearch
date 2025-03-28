@@ -193,7 +193,6 @@ ul {
     gap: 20px;
 }
 
-/* Estilização dos itens da lista */
 li {
     background-color: var(--card-bg);
     border-radius: 10px;
@@ -219,7 +218,7 @@ img {
 }
 
 h2 {
-    margin-top: 5px; /* Ajusta o espaçamento do título */
+    margin-top: 5px;
     font-size: 1.2em;
 }
 

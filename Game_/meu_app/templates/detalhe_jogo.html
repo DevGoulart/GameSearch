@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ jogo.titulo }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>{{ jogo.titulo }}</h1>
-    {% if jogo.imagem %}
-        <img src="{{ jogo.imagem.url }}" alt="{{ jogo.titulo }}" width="300">
-    {% else %}
-        <p>Sem imagem disponível</p>
-    {% endif %}
-    <h2>Descrição</h2>
-    <p>{{ jogo.descricao }}</p>
-    <p><a href="/">Voltar ao catálogo</a></p>
+    <div class="container">
+        <h1>{{ jogo.titulo }}</h1>
+
+        <div class="game-details">
+            {% if jogo.imagem %}
+                <img src="{{ jogo.imagem.url }}" alt="{{ jogo.titulo }}">
+            {% else %}
+                <p class="no-image">Sem imagem disponível</p>
+            {% endif %}
+
+            <div class="game-info">
+                <h2>Descrição</h2>
+                <p>{{ jogo.descricao }}</p>
+                <a href="{% url 'catalogo' %}" class="back-button">Voltar ao catálogo</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
