@@ -708,7 +708,7 @@ body.dark-mode .signup-link a:hover {
 
 .signup-button {
     background-color: var(--button-bg);
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
