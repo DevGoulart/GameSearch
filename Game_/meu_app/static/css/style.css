@@ -661,3 +661,161 @@ body.dark-mode .signup-link a:hover {
         font-size: 0.85em;
     }
 }
+
+/* Estilos para a página de Cadastro */
+.signup-form {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group .input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group .input:focus {
+    outline: none;
+    border: 1px solid var(--input-border);
+    box-shadow: -3px -3px 0px var(--input-border);
+}
+
+.signup-button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.signup-button:hover {
+    background-color: var(--button-hover);
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--muted-text);
+}
+
+.login-link a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--link-hover);
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Ajustes para modo escuro */
+body.dark-mode .signup-form {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+body.dark-mode .form-group label {
+    color: var(--text-color);
+}
+
+body.dark-mode .form-group .input {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--input-border);
+}
+
+body.dark-mode .login-link {
+    color: var(--muted-text);
+}
+
+body.dark-mode .login-link a {
+    color: var(--link-color);
+}
+
+body.dark-mode .login-link a:hover {
+    color: var(--link-hover);
+}
+
+body.dark-mode .error {
+    color: #ff6b6b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .signup-form {
+        padding: 20px;
+    }
+
+    .form-group .input {
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .signup-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form {
+        padding: 15px;
+    }
+
+    .form-group .input {
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .signup-button {
+        padding: 7px 12px;
+        font-size: 0.85em;
+    }
+
+    .login-link {
+        font-size: 0.85em;
+    }
+
+    .error {
+        font-size: 0.85em;
+    }
+}
