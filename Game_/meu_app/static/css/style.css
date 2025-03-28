@@ -21,7 +21,7 @@
 
 /* Estilos da barra de navegação */
 .navbar {
-    background: transparent; /* Remove o fundo da navbar */
+    background: transparent;
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -33,19 +33,19 @@
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo */
+    justify-content: center;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centraliza os links */
+    justify-content: center;
     align-items: center;
     gap: 40px;
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.9) 100%); /* Gradiente apenas nos botões */
-    padding: 10px 20px; /* Espaçamento interno para o contorno */
-    border-radius: 30px; /* Bordas arredondadas */
-    box-shadow: 0 4px 15px var(--shadow-color); /* Contorno apenas nos botões */
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.9) 100%);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px var(--shadow-color);
     transition: box-shadow 0.3s ease;
 }
 
@@ -93,7 +93,6 @@
     width: 80%;
 }
 
-/* Efeito ativo (opcional) */
 .nav-links a.active {
     background: var(--button-bg);
     color: white;
@@ -101,7 +100,7 @@
 
 /* Ajustes para modo escuro */
 body.dark-mode .navbar {
-    background: transparent; /* Mantém sem fundo no modo escuro */
+    background: transparent;
 }
 
 body.dark-mode .nav-links {
@@ -183,15 +182,15 @@ h1 .logo {
 .switch {
     font-size: 17px;
     position: absolute;
-    top: 10px; /* Ajustado para ficar mais próximo do topo */
+    top: 10px;
     right: 20px;
     display: inline-block;
     width: 4em;
     height: 2.2em;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1100; /* Z-index maior que o da navbar */
-    background: var(--card-bg); /* Adiciona um fundo para melhor visibilidade */
+    z-index: 1100;
+    background: var(--card-bg);
     transition: background 0.3s ease;
 }
 
