@@ -5,6 +5,11 @@
 </head>
 <body>
     <h1>Catálogo de Jogos</h1>
+    <!-- Formulário de pesquisa -->
+    <form method="get" action="{% url 'catalogo' %}">
+        <input type="text" name="q" placeholder="Pesquisar jogos..." value="{{ request.GET.q }}">
+        <button type="submit">Pesquisar</button>
+    </form>
     <ul>
         {% for jogo in jogos %}
             <li>
@@ -16,7 +21,7 @@
                 {% endif %}
             </li>
         {% empty %}
-            <p>Nenhum jogo no catálogo ainda.</p>
+            <p>Nenhum jogo encontrado.</p>
         {% endfor %}
     </ul>
 </body>
