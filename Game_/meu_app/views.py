@@ -2,7 +2,11 @@ from django.shortcuts import render
 from .models import Jogo
 
 def catalogo(request):
-    jogos = Jogo.objects.all()
+    query = request.GET.get('q')  # Pega o texto da busca
+    if query:
+        jogos = Jogo.objects.filter(titulo__icontains=query)
+    else:
+        jogos = Jogo.objects.all()
     return render(request, 'catalogo.html', {'jogos': jogos})
 
 def detalhe_jogo(request, jogo_id):
