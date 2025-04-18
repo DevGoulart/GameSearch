@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from .models import Jogo
 from django.contrib.auth import authenticate, login as auth_login
@@ -9,7 +10,17 @@ def catalogo(request):
         jogos = Jogo.objects.filter(titulo__icontains=query)
     else:
         jogos = Jogo.objects.all()
-    return render(request, 'catalogo.html', {'jogos': jogos})
+
+    # Configurar a paginação
+    paginator = Paginator(jogos, 16)  # Mostrar 9 jogos por página
+    page_number = request.GET.get('page')  # Obter o número da página da URL
+    page_obj = paginator.get_page(page_number)  # Obter os objetos da página atual
+
+    return render(request, 'catalogo.html', {
+        'jogos': page_obj,  # Passar o objeto da página
+        'page_obj': page_obj,  # Passar para controle de navegação
+        'query': query or ''  # Passar a query para manter a busca
+    })
 
 def detalhe_jogo(request, jogo_id):
     jogo = Jogo.objects.get(id=jogo_id)
@@ -44,12 +55,6 @@ def signup(request):
         auth_login(request, user)
         return redirect('catalogo')  # Redireciona para o catálogo após cadastro
     return render(request, 'signup.html', {})
-
-def signup(request):
-    return render(request, 'signup.html')
-
-def login(request):
-    return render(request, 'login.html')
 
 def sobre(request):
     return render(request, 'sobre.html')

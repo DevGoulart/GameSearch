@@ -851,6 +851,55 @@ body.dark-mode .promocoes-content p {
     color: var(--text-color);
 }
 
+/* Estilos para Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.page-link {
+    text-decoration: none;
+    color: var(--link-color);
+    background-color: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.page-link:hover {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+.page-link.active {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: default;
+    transform: none;
+}
+
+body.dark-mode .page-link {
+    color: var(--link-color);
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .page-link:hover {
+    background-color: var(--button-hover);
+    color: var(--text-color);
+}
+
+body.dark-mode .page-link.active {
+    background-color: var(--button-hover);
+    color: var(--text-color);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .promocoes-content {
@@ -859,6 +908,15 @@ body.dark-mode .promocoes-content p {
 
     .promocoes-content p {
         font-size: 1.3em;
+    }
+
+    .pagination {
+        gap: 8px;
+    }
+
+    .page-link {
+        padding: 6px 10px;
+        font-size: 0.9em;
     }
 }
 
@@ -870,5 +928,15 @@ body.dark-mode .promocoes-content p {
     .promocoes-content p {
         font-size: 1.1em;
         letter-spacing: 1.5px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .page-link {
+        padding: 5px 8px;
+        font-size: 0.85em;
     }
 }

@@ -40,7 +40,7 @@
         <!-- Barra de pesquisa -->
         <form method="get" action="{% url 'catalogo' %}">
             <div class="input-container">
-                <input type="text" name="q" class="input" placeholder="PESQUISAR JOGOS..." value="{{ request.GET.q }}">
+                <input type="text" name="q" class="input" placeholder="PESQUISAR JOGOS..." value="{{ query }}">
                 <span class="icon" onclick="this.closest('form').submit()"> 
                     <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -69,6 +69,27 @@
                 <p>Nenhum jogo encontrado.</p>
             {% endfor %}
         </ul>
+
+        <!-- Paginação -->
+        {% if page_obj.has_other_pages %}
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}" class="page-link">« Anterior</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <span class="page-link active">{{ num }}</span>
+                    {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                        <a href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}" class="page-link">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}" class="page-link">Próximo »</a>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
     <script src="{% static 'js/theme.js' %}"></script>
 </body>
