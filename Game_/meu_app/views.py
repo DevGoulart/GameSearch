@@ -11,15 +11,15 @@ def catalogo(request):
     else:
         jogos = Jogo.objects.all()
 
-    # Configurar a paginação
-    paginator = Paginator(jogos, 16)  # Mostrar 9 jogos por página
-    page_number = request.GET.get('page')  # Obter o número da página da URL
-    page_obj = paginator.get_page(page_number)  # Obter os objetos da página atual
+    # Configuração da paginação
+    paginator = Paginator(jogos, 16)  # Mostra 9 jogos por página
+    page_number = request.GET.get('page')  # Obtem o número da página da URL
+    page_obj = paginator.get_page(page_number)  # Obtem os objetos da página atual
 
     return render(request, 'catalogo.html', {
-        'jogos': page_obj,  # Passar o objeto da página
-        'page_obj': page_obj,  # Passar para controle de navegação
-        'query': query or ''  # Passar a query para manter a busca
+        'jogos': page_obj,  # Passa o objeto da página
+        'page_obj': page_obj,  # Passa para controle de navegação
+        'query': query or ''  # Passa a query para manter a busca
     })
 
 def detalhe_jogo(request, jogo_id):

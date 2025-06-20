@@ -7,7 +7,7 @@ checkbox.addEventListener('change', () => {
     localStorage.setItem('darkMode', isDarkMode);
 });
 
-// Carregar preferência do usuário ao iniciar
+// Carregar preferência do usuário
 if (localStorage.getItem('darkMode') === 'true') {
     body.classList.add('dark-mode');
     checkbox.checked = true;
