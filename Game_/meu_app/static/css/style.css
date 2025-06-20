@@ -19,7 +19,7 @@
     --muted-text: #7f8c8d;
 }
 
-/* Estilos da barra de navegação */
+/* barra de navegação */
 .navbar {
     background: transparent;
     padding: 10px 0;
@@ -42,8 +42,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Alinhado com o CSS de referência (20px em telas menores) */
-    padding: 8px 15px; /* Alinhado com o CSS de referência (8px 15px em telas menores) */
+    gap: 20px;
+    padding: 8px 15px;
     border-radius: 30px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: box-shadow 0.3s ease;
@@ -56,11 +56,11 @@
 .nav-links a {
     text-decoration: none;
     color: var(--link-color);
-    font-size: 1em; /* Alinhado com o CSS de referência (1em em telas menores) */
+    font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    padding: 6px 12px; /* Alinhado com o CSS de referência (6px 12px em telas menores) */
+    padding: 6px 12px;
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
@@ -68,14 +68,14 @@
     z-index: 1;
 }
 
-/* Efeito de hover */
+/* hover */
 .nav-links a:hover {
     color: var(--link-hover);
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
-/* Linha animada abaixo do link */
+/* Linha animada */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -93,7 +93,6 @@
     width: 80%;
 }
 
-/* Efeito ativo (opcional) */
 .nav-links a.active {
     background: var(--button-bg);
     color: white;
@@ -841,7 +840,7 @@ body.dark-mode .error {
     letter-spacing: 2px;
 }
 
-/* Ajustes para modo escuro */
+/* modo escuro */
 body.dark-mode .promocoes-content {
     background-color: var(--card-bg);
     box-shadow: 0 4px 6px var(--shadow-color);
