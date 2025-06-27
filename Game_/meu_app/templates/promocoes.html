@@ -40,9 +40,80 @@
         <h1>
             <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"> Promoções
         </h1>
-        <div class="promocoes-content">
-            <p>Em breve</p>
-        </div>
+        <!-- Barra de pesquisa -->
+        <form method="get" action="{% url 'promocoes' %}">
+            <div class="input-container">
+                <input type="text" name="q" class="input" placeholder="PESQUISAR PROMOÇÕES..." value="">
+                <span class="icon" onclick="this.closest('form').submit()"> 
+                    <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> 
+                            <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> 
+                            <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> 
+                            <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> 
+                        </g>
+                    </svg>
+                </span>
+            </div>
+        </form>
+        <ul>
+            <li>
+                <h2><a href="#">Elden Ring</a></h2>
+                <img src="{% static 'images/elden_ring.jpg' %}" alt="Elden Ring" width="200">
+                <div class="price-container">
+                    <p class="original-price">R$ 249.99</p>
+                    <p class="promotional-price">R$ 124.00</p>
+                    <p class="discount">Desconto: 50%</p>
+                </div>
+            </li>
+            <li>
+                <h2><a href="#">Resident Evil 4 Remake</a></h2>
+                <img src="{% static 'images/resident_evil_4.jpg' %}" alt="Resident Evil 4 Remake" width="200">
+                <div class="price-container">
+                    <p class="original-price">R$ 189.00</p>
+                    <p class="promotional-price">R$ 47.25</p>
+                    <p class="discount">Desconto: 75%</p>
+                </div>
+            </li>
+            <li>
+                <h2><a href="#">Stellar Blade</a></h2>
+                <img src="{% static 'images/stellar_blade.png' %}" alt="Stellar Blade" width="200">
+                <div class="price-container">
+                    <p class="original-price">R$ 299.90</p>
+                    <p class="promotional-price">R$ 184.73</p>
+                    <p class="discount">Desconto: 38%</p>
+                </div>
+            </li>
+            <li>
+                <h2><a href="#">Devil May Cry 5 + Vergil</a></h2>
+                <img src="{% static 'images/devil_may_cry_5.jpg' %}" alt="Devil May Cry 5 + Vergil" width="200">
+                <div class="price-container">
+                    <p class="original-price">R$ 79.90</p>
+                    <p class="promotional-price">R$ 17.76</p>
+                    <p class="discount">Desconto: 78%</p>
+                </div>
+            </li>
+            <li>
+                <h2><a href="#">Ghost of Tsushima Director's Cut</a></h2>
+                <img src="{% static 'images/ghost_of_tsushima.jpg' %}" alt="Ghost of Tsushima Director's Cut" width="200">
+                <div class="price-container">
+                    <p class="original-price">R$ 249.90</p>
+                    <p class="promotional-price">R$ 117.91</p>
+                    <p class="discount">Desconto: 53%</p>
+                </div>
+            </li>
+            <li>
+                <h2><a href="#">Lies of P</a></h2>
+                <img src="{% static 'images/lies_of_p.jpg' %}" alt="Lies of P" width="200">
+                <div class="price-container">
+                    <p class="original-price">R$ 149.90</p>
+                    <p class="promotional-price">R$ 87.11</p>
+                    <p class="discount">Desconto: 42%</p>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <script src="{% static 'js/theme.js' %}"></script>

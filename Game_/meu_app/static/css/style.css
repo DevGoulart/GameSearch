@@ -17,6 +17,9 @@
     --button-bg: #ff8700;
     --button-hover: #ff8700;
     --muted-text: #7f8c8d;
+    --original-price: #999;
+    --promotional-price: #2ecc71;
+    --discount-color: #e74c3c;
 }
 
 /* barra de navegação */
@@ -176,7 +179,6 @@ h1 .logo {
     border-radius: 30px;
     overflow: hidden;
 }
-
 
 /* Theme Switch */
 .switch {
@@ -394,6 +396,31 @@ p {
     font-style: italic;
 }
 
+.price-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.original-price {
+    color: var(--original-price);
+    text-decoration: line-through;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.promotional-price {
+    color: var(--promotional-price);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.discount {
+    color: var(--discount-color);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
 body.dark-mode {
     --bg-color: #0d0d0d;
     --text-color: #ffffff;
@@ -405,6 +432,9 @@ body.dark-mode {
     --button-bg: #ffffff;
     --button-hover: #e0e0e0;
     --muted-text: #999999;
+    --original-price: #777;
+    --promotional-price: #27ae60;
+    --discount-color: #ff6b6b;
 }
 
 body.dark-mode .icon svg path {
@@ -431,24 +461,24 @@ body.dark-mode .icon svg path {
     }
 
     .navbar {
-        padding: 8px 0; /* Reduzido ainda mais para telas menores */
+        padding: 8px 0;
     }
 
     .nav-links {
-        gap: 15px; /* Reduzido para telas menores */
-        padding: 6px 10px; /* Reduzido para telas menores */
+        gap: 15px;
+        padding: 6px 10px;
     }
 
     .nav-links a {
-        font-size: 0.9em; /* Reduzido para telas menores */
-        padding: 5px 10px; /* Reduzido para telas menores */
+        font-size: 0.9em;
+        padding: 5px 10px;
     }
 }
 
 @media (max-width: 480px) {
     .nav-links {
         flex-direction: column;
-        gap: 10px; /* Reduzido para telas muito pequenas */
+        gap: 10px;
         padding: 8px 0;
         box-shadow: none;
     }
@@ -825,7 +855,7 @@ body.dark-mode .error {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    max-width: 400px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
